@@ -92,47 +92,47 @@
 //   console.log('Что то произойдет с вероятность в 50%')
 // }
 
-let FruitsBox = {
-  fruits: {
-    'banana': 0,
-    'apple': 0,
-    'pear': 0,
-    'orange': 0
-  },
-  addFruits(value) {
-    switch (value) {
-      case 'banana':
-      case  'apple':
-      case   'pear':
-      case 'orange':
-        this.fruits[value]++;
-        break;
-      default:
-        alert('Нет коробки под такие фрукты')
-        break;
-    }
-  },
-  showFruits() {
-    for(let value in this.fruits) {
-      console.log(value, this.fruits[value]);
-    }
-  },
-  getTotal() {
-    let sum = 0;
-    for(let key in this.fruits) {
-      sum += this.fruits[key];
-    }
-    return 'Общее количество фруктов ' + sum;
-  }
-};
+// let FruitsBox = {
+//   fruits: {
+//     'banana': 0,
+//     'apple': 0,
+//     'pear': 0,
+//     'orange': 0
+//   },
+//   addFruits(value) {
+//     switch (value) {
+//       case 'banana':
+//       case  'apple':
+//       case   'pear':
+//       case 'orange':
+//         this.fruits[value]++;
+//         break;
+//       default:
+//         alert('Нет коробки под такие фрукты')
+//         break;
+//     }
+//   },
+//   showFruits() {
+//     for(let value in this.fruits) {
+//       console.log(value, this.fruits[value]);
+//     }
+//   },
+//   getTotal() {
+//     let sum = 0;
+//     for(let key in this.fruits) {
+//       sum += this.fruits[key];
+//     }
+//     return 'Общее количество фруктов ' + sum;
+//   }
+// };
 
-FruitsBox.addFruits('banana');
-FruitsBox.addFruits('banana');
-FruitsBox.addFruits('apple');
-FruitsBox.addFruits('orange');
-FruitsBox.showFruits();
+// FruitsBox.addFruits('banana');
+// FruitsBox.addFruits('banana');
+// FruitsBox.addFruits('apple');
+// FruitsBox.addFruits('orange');
+// FruitsBox.showFruits();
 
-console.log( FruitsBox.getTotal() )
+// console.log( FruitsBox.getTotal() )
 
 // let animal = {
 //   name: 'cow',
@@ -146,3 +146,31 @@ console.log( FruitsBox.getTotal() )
 // for(let key of Object.values(animal)) {
 //   console.log(value);
 // }
+
+let Circle = {
+  radius: 0,
+  setRadius(radius) {
+    this.radius = radius;
+    return radius;
+  },
+  square(square) {
+    return Math.round(Math.PI * Math.pow(this.radius) * 2);
+  }, // length = Math.PI * radius * 2, 
+  length(length) {
+    return Math.round(2 * Math.PI * Math.pow(this.radius));
+  }  // 2 * Math.PI * radius
+};
+
+for(let value of Circle) {
+  let result = Circle[value]
+  result += Circle[value];
+}
+
+Circle.setRadius(20);
+console.log(Circle)
+
+// parseInt( prompt('Укажите радиус') );
+
+// parseInt( prompt('Укажите площадь') );
+
+// parseInt( prompt('Укажите длину окружности') );
