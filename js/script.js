@@ -116,6 +116,13 @@ let FruitsBox = {
     for(let value in this.fruits) {
       console.log(value, this.fruits[value]);
     }
+  },
+  getTotal() {
+    let sum = 0;
+    for(let key in this.fruits) {
+      sum += this.fruits[key];
+    }
+    return 'Общее количество фруктов ' + sum;
   }
 };
 
@@ -124,3 +131,18 @@ FruitsBox.addFruits('banana');
 FruitsBox.addFruits('apple');
 FruitsBox.addFruits('orange');
 FruitsBox.showFruits();
+
+console.log( FruitsBox.getTotal() )
+
+// let animal = {
+//   name: 'cow',
+//   color: 'white',
+//   weight: 2000
+// };
+
+// let values = Object.values(animal);
+// console.log(values)
+
+// for(let key of Object.values(animal)) {
+//   console.log(value);
+// }
